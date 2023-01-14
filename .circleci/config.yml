@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.18.1
+      - image: cimg/go:1.19.4
     working_directory: /go/src/around
     steps:
       - checkout
