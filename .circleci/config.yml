@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cimg/go:1.19.4
-    working_directory: /go/src/around
+    working_directory: /home/circleci/go/src/around
     steps:
       - checkout
       - setup_remote_docker
