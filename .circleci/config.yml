@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.18.1
+    working_directory: /go/src/around
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          docker build -t chunhsuehlee/around .
+          docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
+          docker push chunhsuehlee/around
